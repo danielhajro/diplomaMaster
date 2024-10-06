@@ -1,0 +1,69 @@
+ /* FOOTER */
+ .mbarim{
+    background-color: #060606;
+    height: 170px;
+}   
+.foot-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.foot-col{
+    width: auto;
+    padding: 0 30px;
+}
+.foot-col h4{
+    font-size: 2em;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+    overflow-y: hidden;
+    padding-top: 10px;
+}
+
+.foot-col ul{
+    list-style: none;
+    margin-bottom: 10px;
+
+}
+.foot-col ul a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #fff;
+    display: block;
+    transition:all 0.3s ease ;
+}
+.foot-col ul li a:hover{
+    color: #fff;
+    padding-left: 7px;
+}
+.foot-col ul i{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,2555,255,0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+.foot-col ul i:hover{
+    color: #24262b;
+    background-color: #fff;
+
+}
+.socially ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+

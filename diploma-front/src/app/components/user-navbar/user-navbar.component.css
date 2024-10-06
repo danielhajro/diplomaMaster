@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #1A1423;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+    min-height: 40px;
+}
+
+.nav-links a,
+.auth-links a {
+    color: #FCF4F8;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.auth-links a:hover {
+    color: #8F5C38 ;
+}
+
+.nav-links,
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a,
+.auth-links a {
+    margin: 0 10px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.logo img {
+    vertical-align: middle;
+    transform: scale(3);
+}

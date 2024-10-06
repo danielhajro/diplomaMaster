@@ -1,0 +1,61 @@
+<app-user-navbar></app-user-navbar>
+
+<body>
+  <!-- User Info Section -->
+  <section class="user-info-section">
+    <h2 class="section-title">Informacionet e perdoruesit:</h2>
+    
+    <div class="user-info">
+      <div class="infos">
+        <p class="user-name">Emri i perdoruesit: <span>{{person?.name}}</span></p>
+        <p class="user-number">Numri i perdoruesit: <span>{{person?.number}}</span></p>
+        <p class="user-email">Emaili i perdoruesit: <span>{{person?.email}}</span></p>
+      </div>
+      <a class="update-profile-btn" [routerLink]="['/update-profile', person?.person_id]">Perditeso Profilin</a>
+    </div>
+  </section>
+
+  <!-- User Cars Section -->
+  <div class="user-cars">
+    <div *ngIf="cars.length > 0; else noCars">
+      <h3>Makinat e Mia:</h3>
+      <a [routerLink]="['/cars']">Shiko te gjitha makinat</a>
+      <ul>
+        <li *ngFor="let car of cars">
+          {{ car.make }} {{ car.model }} - {{ car.year }}
+        </li>
+      </ul>
+    </div>
+    <ng-template #noCars>
+      <h3>Makinat e Mia:</h3>
+      <a [routerLink]="['/cars']">Shiko te gjitha makinat</a>
+      <p>No cars found.</p>
+    </ng-template>
+    
+  </div>
+
+
+  <!-- Recent Posts Section -->
+<section class="recent-posts-section">
+  <h2 class="section-title">Postimet e fundit:</h2>
+  <a routerLink="/post"> Shiko te gjitha postimet</a>
+  <div *ngIf="recentPost.length > 0; else noPosts">
+    <ul>
+      <li *ngFor="let post of recentPost">
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.content }}</p>
+        <p>Car ID: {{ post.car_id }}</p>
+        <p>Posted on: {{ post.timestamp | date:'short' }}</p>
+        <a [routerLink]="['/post-details', post.post_id]">View Details</a>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noPosts>
+    <p>No recent posts available.</p>
+  </ng-template>
+</section>
+
+<app-footer></app-footer>
+</body>
+
+

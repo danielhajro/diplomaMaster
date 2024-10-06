@@ -1,0 +1,47 @@
+<app-user-navbar></app-user-navbar>
+<div class="container">
+  <h1>Your Posts</h1>
+  <a class="new" [routerLink]="['/new-post']">Shto Postim te Ri</a>
+
+  <!-- Posts Grid Container -->
+  <div class="posts-container" *ngIf="posts.length > 0; else noPosts">
+    <div class="post" *ngFor="let post of posts">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <div class="actions">
+        <button (click)="editPost(post.post_id)">Edit</button>
+        <button (click)="deletePost(post.post_id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noPosts>
+    <p>No posts available.</p>
+  </ng-template>
+
+  <h1>Other Posts</h1>
+  <div class="posts-container" *ngIf="otherPost.length > 0; else noOtherPosts">
+    <div class="post" *ngFor="let post of otherPost">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <a class="details" [routerLink]="['/post-details', post.post_id]">Details</a>
+      <div class="post-actions">
+        <button class="write-review" (click)="newReview(post.post_id)">
+          <i class="fa fa-pencil-alt"></i> Write Review
+        </button>
+        <button class="add-wishlist" (click)="addToWishlist(post.post_id)">
+          <i class="fa fa-heart"></i> Add to Wishlist
+        </button>
+        <button class="place-order" (click)="placeOrder(post.post_id)">
+          <i class="fa fa-shopping-cart"></i> Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noOtherPosts>
+    <p>No other posts available.</p>
+  </ng-template>
+  
+</div>
+<app-footer></app-footer>

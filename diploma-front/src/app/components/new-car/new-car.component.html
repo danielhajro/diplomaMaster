@@ -1,0 +1,86 @@
+<body>
+  <app-user-navbar></app-user-navbar>
+  
+  <form [formGroup]="addNewCarForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="mileage">Mileage:</label>
+      <input id="mileage" type="text" formControlName="mileage" />
+      <div *ngIf="addNewCarForm.get('mileage')?.invalid && addNewCarForm.get('mileage')?.touched">
+        <span class="error-message">Mileage is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="make">Make:</label>
+      <input id="make" type="text" formControlName="make" />
+      <div *ngIf="addNewCarForm.get('make')?.invalid && addNewCarForm.get('make')?.touched">
+        <span class="error-message">Make is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="model">Model:</label>
+      <input id="model" type="text" formControlName="model" />
+      <div *ngIf="addNewCarForm.get('model')?.invalid && addNewCarForm.get('model')?.touched">
+        <span class="error-message">Model is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="fuel">Fuel:</label>
+      <input id="fuel" type="text" formControlName="fuel" />
+      <div *ngIf="addNewCarForm.get('fuel')?.invalid && addNewCarForm.get('fuel')?.touched">
+        <span class="error-message">Fuel is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="gear">Gear:</label>
+      <input id="gear" type="text" formControlName="gear" />
+      <div *ngIf="addNewCarForm.get('gear')?.invalid && addNewCarForm.get('gear')?.touched">
+        <span class="error-message">Gear is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="offer_type">Offer Type:</label>
+      <input id="offer_type" type="text" formControlName="offer_type" />
+      <div *ngIf="addNewCarForm.get('offer_type')?.invalid && addNewCarForm.get('offer_type')?.touched">
+        <span class="error-message">Offer Type is required</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="price">Price:</label>
+      <input id="price" type="text" formControlName="price" />
+      <div *ngIf="addNewCarForm.get('price')?.invalid && addNewCarForm.get('price')?.touched">
+        <span class="error-message" *ngIf="addNewCarForm.get('price')?.errors?.['required']">Price is required</span>
+        <span class="error-message" *ngIf="addNewCarForm.get('price')?.errors?.['min']">Price cannot be negative</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="hp">Horsepower (HP):</label>
+      <input id="hp" type="text" formControlName="hp" />
+      <div *ngIf="addNewCarForm.get('hp')?.invalid && addNewCarForm.get('hp')?.touched">
+        <span class="error-message" *ngIf="addNewCarForm.get('hp')?.errors?.['required']">HP is required</span>
+        <span class="error-message" *ngIf="addNewCarForm.get('hp')?.errors?.['min']">HP must be positive</span>
+        <span class="error-message" *ngIf="addNewCarForm.get('hp')?.errors?.['max']">HP must be less than 1000</span>
+      </div>
+    </div>
+  
+    <div>
+      <label for="year">Year:</label>
+      <input id="year" type="text" formControlName="year" />
+      <div *ngIf="addNewCarForm.get('year')?.invalid && addNewCarForm.get('year')?.touched">
+        <span class="error-message" *ngIf="addNewCarForm.get('year')?.errors?.['required']">Year is required</span>
+        <span class="error-message" *ngIf="addNewCarForm.get('year')?.errors?.['min']">Year must be at least 1970</span>
+        <span class="error-message" *ngIf="addNewCarForm.get('year')?.errors?.['max']">Year cannot be greater than {{currentYear}}</span>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="addNewCarForm.invalid">Submit</button>
+  </form>
+  
+  <app-footer></app-footer>
+</body>

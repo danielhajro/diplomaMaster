@@ -1,0 +1,153 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-4">
+    <h1>Admin Dashboard</h1>
+  
+    <!-- Display All Users -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h3>Perdoruesit</h3> 
+        <h5><a routerLink="/allusers">Trego me shume</a></h5>
+        <a routerLink="/new-admin"><span class="admin-add">Shto admin te ri</span></a>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Emri</th>
+              <th>Mbiemri</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let person of person; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ person.name }}</td>
+              <td>{{ person.surname }}</td>
+              <td>{{ person.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Display All Cars -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h3>Makinat</h3>
+        <h5><a routerLink="/allcars">Trego me shume</a></h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Marka makines</th>
+              <th>Modeli makines</th>
+              <th>Viti Prodhimit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let car of cars; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ car.make }}</td>
+              <td>{{ car.model }}</td>
+              <td>{{ car.year }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Display All Posts -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h3>Postime</h3>
+        <h5><a routerLink="/allposts">Trego me shume</a></h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Titulli Postimit</th>
+              <th>Pershkrimi</th>
+              <th>Cmimi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of post; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ post.title }}</td>
+              <td>{{ post.content }}</td>
+              <td>{{ post.sell_price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Display All Orders -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h3>Porosite</h3>
+        <h5><a routerLink="/allorders">Trego me shume</a></h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Data Porosise</th>
+              <th>Statusi</th>
+              <th>Menyra Pageses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of order; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ order.order_date | date: 'short' }}</td>
+              <td>{{ order.status }}</td>
+              <td>{{ order.payment_type  }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Display All Reviews -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h3>Vleresimet</h3>
+        <h5><a routerLink="/allreviews">Trego me shume</a></h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vleresimi</th>
+                <th>Pershkrimi</th>
+                <th>Vleresuar nga:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let review of review; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ review.rating }}/5</td>
+                <td>{{ review.content }}</td>
+                <td>
+                  <div *ngIf="review?.person_id">
+                    <div *ngFor="let detail of getPersonDetails(review.person_id)">
+                      <p><strong>{{ detail.label }}:</strong> {{ detail.value }}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <app-footer></app-footer>

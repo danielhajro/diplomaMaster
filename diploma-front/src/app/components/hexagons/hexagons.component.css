@@ -1,0 +1,82 @@
+.hexagons {
+    background-color: #FCF4F8 ;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.hexagons>p{
+    text-align: center;
+    color: rgb(86, 94, 101);
+}
+
+h2 {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #307351 ;
+    margin: 10px auto 0;
+}
+
+.hexas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.one-hexa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hexagon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    background: #307351;
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hexagon i {
+    font-size: 2rem;
+    color: #FCF4F8;
+}
+
+h4 {
+    margin-top: 20px;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+h4::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #307351 ;
+    margin: 10px auto 0;
+}
+
+.one-hexa p{
+    color: rgb(86, 94, 101);
+}

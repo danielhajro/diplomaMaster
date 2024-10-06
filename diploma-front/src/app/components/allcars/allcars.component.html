@@ -1,0 +1,45 @@
+<!-- Display All Cars -->
+<div class="card mt-4">
+    <div class="card-header">
+      <h3>Makinat</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Marka makines</th>
+            <th>Modeli makines</th>
+            <th>Viti Prodhimit</th>
+            <th>Kilometrazhi</th>
+            <th>Karburant</th>
+            <th>Gjendja</th>
+            <th>Marshi</th>
+            <th>Çmimi</th>
+            <th>HP</th>
+            <th>Detajet e Pronarit</th> <!-- Owner's Details -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ car.make }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+            <td>{{ car.mileage }}</td>
+            <td>{{ car.fuel }}</td>
+            <td>{{ car.offer_type }}</td>
+            <td>{{ car.gear }}</td>
+            <td>{{ car.price }}</td>
+            <td>{{ car.hp }}</td>
+            <td>
+              <div *ngFor="let detail of getPersonDetails(car.person_id)">
+                <strong>{{ detail.label }}:</strong> {{ detail.value }}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

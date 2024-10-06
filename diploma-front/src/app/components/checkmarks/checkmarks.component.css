@@ -1,0 +1,54 @@
+.checkmarks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    background: linear-gradient(135deg, #15121a, #1A1423);
+    justify-items: center;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    color: #FCF4F8;
+    text-align: left;
+}
+
+.info h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #d6d6d6;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.checks ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checks li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #FCF4F8;
+}
+
+li i {
+    color: #307351;
+    margin-right: 10px;
+}

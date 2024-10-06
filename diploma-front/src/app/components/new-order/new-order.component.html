@@ -1,0 +1,51 @@
+<body>
+<app-user-navbar></app-user-navbar>
+<div class="container">
+  <h1>Place New Order</h1>
+
+  <!-- Display Post Details -->
+  <div *ngIf="postDetails" class="post-details">
+    <h2>Post Details</h2>
+    <p><strong>Title:</strong> {{ postDetails.title }}</p>
+    <p><strong>Description:</strong> {{ postDetails.content }}</p>
+    <p><strong>Price:</strong> ${{ postDetails.sell_price }}</p>
+  </div>
+
+  <!-- Form for placing order -->
+  <form [formGroup]="addOrderForm" (ngSubmit)="onSubmit()">
+
+    <!-- Payment Type Field -->
+    <div class="form-group">
+      <label for="payment_type">Payment Type</label>
+      <select id="payment_type" formControlName="payment_type" class="form-control" required>
+        <option value="" disabled selected>Select Payment Type</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Cash">Cash</option>
+      </select>
+      <div *ngIf="addOrderForm.get('payment_type')?.invalid && addOrderForm.get('payment_type')?.touched">
+        <small class="text-danger">Payment type is required</small>
+      </div>
+    </div>
+
+    <!-- Hidden Fields -->
+    <div *ngIf="addOrderForm.get('order_date')?.value">
+      <input type="hidden" formControlName="order_date" />
+      <input type="hidden" formControlName="person_id" />
+      <input type="hidden" formControlName="post_id" />
+      <input type="hidden" formControlName="seller_id" />
+      <input type="hidden" formControlName="status" />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="addOrderForm.invalid">Place Order</button>
+
+  </form>
+
+  <!-- Display Validation Errors -->
+  <div *ngIf="addOrderForm.invalid && addOrderForm.touched">
+    <p class="text-danger">Please complete the form correctly before submitting.</p>
+  </div>
+</div>
+  <app-footer></app-footer>
+</body>

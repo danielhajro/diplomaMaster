@@ -1,0 +1,47 @@
+<!-- Display All Posts -->
+<div class="card mt-4">
+  <div class="card-header">
+    <h3>Postime</h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Titulli Postimit</th>
+          <th>Pershkrimi</th>
+          <th>Cmimi</th>
+          <th>Detajet e Shitësit</th> <!-- Seller Details -->
+          <th>Detajet e Makines</th> <!-- Car Details -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of post; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ post.title }}</td>
+          <td>{{ post.content }}</td>
+          <td>{{ post.sell_price }}</td>
+
+          <!-- Seller Details -->
+          <td>
+            <ng-container *ngIf="post.seller_id !== undefined && sellerDetails[post.seller_id] !== undefined; else loadingSeller">
+              <div *ngFor="let detail of getPersonDetails(sellerDetails[post.seller_id])">
+                <strong>{{ detail.label }}:</strong> {{ detail.value }}
+              </div>
+            </ng-container>
+            <ng-template #loadingSeller>
+              <span>Loading seller...</span>
+            </ng-template>
+          </td>
+
+          <!-- Car Details -->
+          <td>
+            <div *ngFor="let detail of getCarDetails(post.car_id)">
+              <strong>{{ detail.label }}:</strong> {{ detail.value }}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

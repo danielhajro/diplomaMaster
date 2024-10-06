@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<div class="full">
+  <form class="form" [formGroup]="updatePersonForm" (ngSubmit)="onSubmit()">
+    <p class="title">Profili </p>
+    <div class="flex">
+      <label>
+        <input formControlName="name" class="input" type="text" placeholder="" required>
+        <span>Emri</span>
+      </label>
+
+      <label>
+        <input formControlName="surname" class="input" type="text" placeholder="" required>
+        <span>Mbiemri</span>
+      </label>
+    </div>
+
+    <label>
+      <input type="date" formControlName="dob" class="input" placeholder="" required>
+      <span>Ditelindja</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="email" type="email" placeholder="" required>
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="number" type="text" placeholder="" required>
+      <span>Numri</span>
+    </label>
+
+    <label class="non-visible">
+      <input type="text" formControlName="role" class="input" placeholder="" >
+      <span>Role</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="address" class="input" placeholder="" required>
+      <span>Adresa</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="state" class="input" placeholder="" required>
+      <span>Shteti</span>
+    </label>
+
+
+    <button class="submit" type="submit">Submit</button>
+  </form>
+  <div class="delete">
+    <button class="submit red" (ngSubmit)="deleteProfile(person?.person_id)">Delete Profile</button>
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>

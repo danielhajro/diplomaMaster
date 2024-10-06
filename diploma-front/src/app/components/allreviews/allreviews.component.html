@@ -1,0 +1,40 @@
+ <!-- Display All Reviews -->
+ <div class="card mt-4">
+    <div class="card-header">
+      <h3>Vleresimet</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Vleresimi</th>
+              <th>Pershkrimi</th>
+              <th>Postimi</th>
+              <th>Vleresuar nga:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let review of review; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ review.rating }}/5</td>
+              <td>{{ review.content }}</td>
+              <td>
+                <div *ngIf="review?.post_id">
+                  <div *ngFor="let detail of getPostDetails(review.post_id)">
+                    <p><strong>{{detail.label}}:</strong> {{detail.value}}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div *ngIf="review?.person_id">
+                  <div *ngFor="let detail of getPersonDetails(review.person_id)">
+                    <p><strong>{{ detail.label }}:</strong> {{ detail.value }}</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>

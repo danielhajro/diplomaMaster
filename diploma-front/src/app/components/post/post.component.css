@@ -1,0 +1,193 @@
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark text for contrast */
+  }
+  
+  /* Heading */
+  h1 {
+    text-align: center;
+    color: #333; /* Dark color for heading */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #2196F3; /* Accent color for heading */
+    padding-bottom: 10px;
+  }
+  
+  /* New Post Link */
+  .new {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    background-color: #2196F3; /* Blue button */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .new:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+  }
+  
+  /* Responsive Grid for Posts */
+  .posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* Post Card */
+  .post {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .post:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Post Title */
+  h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Post Content */
+  p {
+    color: #666; /* Subtle gray for content */
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Actions Section */
+  .actions {
+    margin-top: 20px;
+  }
+  
+  /* Buttons */
+  .actions button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .actions button:hover {
+    background-color: #388E3C; /* Darker green */
+    transform: scale(1.05);
+  }
+  
+  .actions button:last-child {
+    background-color: #F44336; /* Red button */
+  }
+  
+  .actions button:last-child:hover {
+    background-color: #D32F2F; /* Darker red on hover */
+  }
+  
+  /* Place Order Button */
+  button.place-order {
+    padding: 10px 15px;
+    background-color: #2196F3; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button.place-order:hover {
+    background-color: #1976d2; /* Darker blue */
+  }
+  
+  /* No Posts Template */
+  ng-template {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 400;
+  }
+  
+
+  /* Post Actions Buttons */
+.post-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.post-actions button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: white;
+  font-size: 14px;
+}
+
+.post-actions i {
+  margin-right: 8px;
+}
+
+/* Write Review Button */
+.write-review {
+  background-color: #FF9800; /* Orange for review button */
+}
+
+.write-review:hover {
+  background-color: #F57C00; /* Darker orange */
+  transform: scale(1.05);
+}
+
+/* Add to Wishlist Button */
+.add-wishlist {
+  background-color: #E91E63; /* Pink for wishlist button */
+}
+
+.add-wishlist:hover {
+  background-color: #C2185B; /* Darker pink */
+  transform: scale(1.05);
+}
+
+/* Place Order Button */
+.place-order {
+  background-color: #2196F3; /* Blue for order button */
+}
+
+.place-order:hover {
+  background-color: #1976D2; /* Darker blue */
+  transform: scale(1.05);
+}
+
+/* Simple Link Styles */
+.details {
+  color: #2196F3; /* Blue text color */
+  text-decoration: none; /* No underline */
+}
+
+.details:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #1976d2; /* Darker blue on hover */
+}

@@ -1,0 +1,91 @@
+<app-user-navbar></app-user-navbar>
+<div class="orders-container">
+    <div class="user-orders-section">
+      <h2>Your Orders</h2>
+      <div *ngIf="orders.length > 0; else noOrders">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Post ID</th>
+              <th>Order Date</th>
+              <th>Status</th>
+              <th>Payment Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.order_id }}</td>
+              <td><div *ngIf="order.post_id">
+                <div *ngFor="let detail of getPostDetails(order.post_id)">
+                  <strong>{{ detail.label }}:</strong> {{ detail.value }}
+                </div>
+              </div></td>
+              <td>{{ order.order_date | date:'short' }}</td>
+              <td class="status {{ order.status }}">{{ order.status }}</td>
+              <td>{{ order.payment_type }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noOrders>
+        <p>You have no orders yet.</p>
+      </ng-template>
+    </div>
+  
+<div class="seller-requests-section">
+  <h2>Your Selling Requests</h2>
+  <div *ngIf="requests.length > 0; else noRequests">
+    <table>
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>Buyer Info</th>
+          <th>Post Info</th>
+          <th>Request Date</th>
+          <th>Status</th>
+          <th>Payment Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.order_id }}</td>
+          <td>
+            <div *ngIf="request.person_id">
+              <div *ngFor="let detail of getPersonDetails(request.person_id)">
+                <strong>{{ detail.label }}:</strong> {{ detail.value }}
+              </div>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="request.post_id">
+              <div *ngFor="let detail of getPostDetails(request.post_id)">
+                <strong>{{ detail.label }}:</strong> {{ detail.value }}
+              </div>
+            </div>
+          </td>
+          
+          <td>{{ request.order_date | date: 'short' }}</td>
+          <td class="status {{ request.status }}">{{ request.status }}</td>
+          <td>{{ request.payment_type }}</td>
+          <td>
+            <button [disabled]="request.status !== 'Pending'" (click)="acceptOrder(request.order_id!, request.post_id!)">
+              Accept
+            </button>
+            <button [disabled]="request.status !== 'Pending'" (click)="refuseOrder(request.order_id!, request.post_id!)">
+              Refuse
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      
+      
+    </table>
+  </div>
+  <ng-template #noRequests>
+    <p>You have no seller requests yet.</p>
+  </ng-template>
+</div>
+</div>
+  <app-footer></app-footer>

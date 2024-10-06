@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="full">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <p class="title">Regjistrohu </p>
+    <div class="flex">
+      <label>
+        <input formControlName="name" class="input" type="text" placeholder="" required>
+        <span>Emri</span>
+      </label>
+
+      <label>
+        <input formControlName="surname" class="input" type="text" placeholder="" required>
+        <span>Mbiemri</span>
+      </label>
+    </div>
+
+    <label>
+      <input type="date" formControlName="dob" class="input" placeholder="" required>
+      <span>Ditelindja</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="email" type="email" placeholder="" required>
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input formControlName="password" class="input" type="password" placeholder="" required>
+      <span>Password</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="number" type="text" placeholder="" required>
+      <span>Numri</span>
+    </label>
+
+    <label class="non-visible">
+      <input type="text" formControlName="role" class="input" placeholder="" >
+      <span>Role</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="address" class="input" placeholder="" required>
+      <span>Adresa</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="state" class="input" placeholder="" required>
+      <span>Shteti</span>
+    </label>
+
+    <button class="submit" type="submit">Submit</button>
+    <p class="signin">Already have an account? <a href="#">Signin</a></p>
+  </form>
+</div>
+<app-footer></app-footer>

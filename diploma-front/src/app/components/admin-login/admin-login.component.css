@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Height Class */
+  .height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px); /* Adjust based on navbar/footer height */
+  }
+  
+  /* Login Box Styles */
+  .login-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* User Box Styles */
+  .user-box {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .user-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .user-box label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  /* Focus Styles */
+  .user-box input:focus {
+    border-color: green;
+  }
+  
+  .user-box input:valid {
+    border-color: green;
+  }
+  
+  .user-box input:focus + label,
+  .user-box input:valid + label {
+    top: -10px;
+    left: 10px;
+    color: green;
+    font-size: 12px;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  
+  /* Error Message Styles */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

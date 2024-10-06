@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Create New Post</h1>
+  
+    <form [formGroup]="addPostForm" (ngSubmit)="onSubmit()">
+      <!-- Title Field -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          class="form-control"
+          placeholder="Enter post title"
+        />
+        <div *ngIf="addPostForm.get('title')?.invalid && addPostForm.get('title')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+  
+      <!-- Content Field -->
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          formControlName="content"
+          class="form-control"
+          placeholder="Enter post content"
+          rows="4"
+        ></textarea>
+        <div *ngIf="addPostForm.get('content')?.invalid && addPostForm.get('content')?.touched" class="text-danger">
+          Content is required.
+        </div>
+      </div>
+  
+      <!-- Car Selector Dropdown -->
+<div class="form-group">
+    <label for="car">Select Car</label>
+    <select id="car" formControlName="car_id" class="form-control">
+      <option value="" disabled>Select a car</option>
+      <option *ngFor="let car of cars" [value]="car.car_id">{{ car.model }}</option>
+    </select>
+    <div *ngIf="addPostForm.get('car_id')?.invalid && addPostForm.get('car_id')?.touched" class="text-danger">
+      Please select a car.
+    </div>
+  </div>
+
+  <!-- Sell price part-->
+   <div class="form-grouo">
+    <label for="sell_price">Sell Price</label>
+    <input type="text" id="sell_price" formControlName="sell_price" class="form-control" placeholder="Enter sell price">
+    <div *ngIf="addPostForm.get('sell_price')?.invalid && addPostForm.get('sell_price')?.touched" class="text-danger">
+      Sell Price is required.
+    </div>
+   </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="addPostForm.invalid">
+        Add Post
+      </button>
+    </form>
+  </div>
+  

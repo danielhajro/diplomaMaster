@@ -1,0 +1,181 @@
+/* Full-width section for User Info */
+.user-info-section {
+    width: 100%;
+    background-color: #1A1423; /* raisin black */
+    padding: 40px 0;
+    color: #FCF4F8; /* snow white */
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    color: #FCF4F8; /* snow white */
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #307351; /* dark spring green */
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  .user-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FCF4F8; /* snow white */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .infos p {
+    font-size: 18px;
+    color: #1A1423; /* raisin black */
+    margin: 15px 0;
+  }
+  
+  .infos span {
+    font-weight: bold;
+    color: #8F5C38; /* raw umber */
+  }
+  
+  .update-profile-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #307351; /* dark spring green */
+    color: #FCF4F8; /* snow white */
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-profile-btn:hover {
+    background-color: #8F5C38; /* raw umber */
+    color: #FCF4F8; /* snow white */
+  }
+  
+  /* User Cars Section */
+.user-cars {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #FCF4F8; /* snow white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.user-cars h3 {
+  color: #1A1423; /* raisin black */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.user-cars ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-cars li {
+  font-size: 18px;
+  color: #1A1423; /* raisin black */
+  background-color: #307351; /* dark spring green */
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #FCF4F8; /* snow white */
+}
+
+.user-cars li:hover {
+  background-color: #8F5C38; /* raw umber */
+}
+
+.recent-posts-section {
+  background-color: #1e1e1e; /* Dark background for the section */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8em;
+  color: #4CAF50; /* Green color for the title */
+  margin-bottom: 15px;
+}
+
+a {
+  color: #4CAF50; /* Green link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+
+li {
+  background-color: #2b2b2b; /* Darker background for each post */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #3a3a3a; /* Slightly lighter on hover */
+}
+
+h4 {
+  margin: 0 0 5px; /* Margin for post title */
+  color: #ffffff; /* White text for titles */
+}
+
+p {
+  margin: 5px 0; /* Margin for paragraphs */
+  color: #cccccc; /* Lighter gray for content text */
+}
+
+.ng-template {
+  text-align: center; /* Center align the no posts message */
+  color: #ff4d4d; /* Red color for the message */
+  font-size: 1.2em;
+}
+
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .user-info, .user-cars, .recent-posts-section {
+    padding: 15px;
+    margin: 20px auto;
+  }
+  
+  .user-info .infos p, 
+  .user-cars li, 
+  .recent-posts-section li {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .user-cars h3, 
+  .recent-posts-section h2 {
+    font-size: 22px;
+  }
+}

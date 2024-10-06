@@ -1,0 +1,61 @@
+<app-user-navbar></app-user-navbar>
+
+<body>
+    <div class="cars">
+        <div class="cars-head">
+            <h2>Makinat e Mia:</h2>
+        </div>
+
+        <!-- Link to add a new car -->
+        <a [routerLink]="['/new-car']" class="add-car-btn">Shto një makinë</a><br>
+
+        <!-- Cars display section -->
+        <div class="cars-shows">
+            <div *ngIf="cars.length > 0; else noCars">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Make</th>
+                            <th>Model</th>
+                            <th>Mileage</th>
+                            <th>Fuel</th>
+                            <th>Gear</th>
+                            <th>Offer Type</th>
+                            <th>Price</th>
+                            <th>Horsepower (HP)</th>
+                            <th>Year</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let car of cars">
+                            <td>{{ car.make }}</td>
+                            <td>{{ car.model }}</td>
+                            <td>{{ car.mileage }}</td>
+                            <td>{{ car.fuel }}</td>
+                            <td>{{ car.gear }}</td>
+                            <td>{{ car.offer_type }}</td>
+                            <td>{{ car.price }}</td>
+                            <td>{{ car.hp }}</td>
+                            <td>{{ car.year }}</td>
+                            <td>
+                                <!-- Only call edit and delete if car.car_id is defined -->
+                                <button *ngIf="car.car_id !== undefined" [routerLink]="['/edit-car', car.car_id]" class="edit-btn">
+                                    Update
+                                </button>
+                                <button *ngIf="car.car_id !== undefined" (click)="deleteCar(car.car_id)" class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Display when no cars are available -->
+            <ng-template #noCars>
+                <p>No cars available. Add your first car!</p>
+            </ng-template>
+        </div>
+    </div>
+</body>
+
+<app-footer></app-footer>

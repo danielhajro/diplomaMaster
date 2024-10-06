@@ -1,0 +1,58 @@
+<app-user-navbar></app-user-navbar>
+<div class="container">
+    <h2>Edit Car Post</h2>
+  
+    <form [formGroup]="editCarForm" (ngSubmit)="onSubmit()">
+      <!-- Title Input -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          formControlName="title"
+          placeholder="Enter car title"
+        />
+        <div *ngIf="editCarForm.get('title')?.invalid && editCarForm.get('title')?.touched" class="text-danger">
+          Title is required
+        </div>
+      </div>
+  
+      <!-- Content Input -->
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          class="form-control"
+          formControlName="content"
+          rows="4"
+          placeholder="Enter post content"
+        ></textarea>
+        <div *ngIf="editCarForm.get('content')?.invalid && editCarForm.get('content')?.touched" class="text-danger">
+          Content is required
+        </div>
+      </div>
+  
+      <!-- Sell Price Input -->
+      <div class="form-group">
+        <label for="sell_price">Sell Price</label>
+        <input
+          type="number"
+          id="sell_price"
+          class="form-control"
+          formControlName="sell_price"
+          placeholder="Enter selling price"
+        />
+        <div *ngIf="editCarForm.get('sell_price')?.invalid && editCarForm.get('sell_price')?.touched" class="text-danger">
+          Sell price is required
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="editCarForm.invalid">
+        Update Post
+      </button>
+      
+    </form>
+  </div>
+  <app-footer></app-footer>

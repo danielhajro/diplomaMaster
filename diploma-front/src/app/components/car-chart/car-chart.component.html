@@ -1,0 +1,29 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <h2>Car Data Analysis</h2>
+  
+    <!-- Dropdown to select attribute for graph -->
+    <div>
+      <label for="attributeSelect">Select Attribute:</label>
+      <select id="attributeSelect" [(ngModel)]="selectedAttribute" (change)="onAttributeChange(selectedAttribute)">
+        <option *ngFor="let attr of attributes" [value]="attr">{{ attr | titlecase }}</option>
+      </select>
+    </div>
+  
+    <!-- Graph Display -->
+    <ngx-charts-bar-vertical
+      *ngIf="chartData.length > 0"
+      [view]="[700, 400]"
+      [scheme]="colorScheme"
+      [results]="chartData"
+      [gradient]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+  </div>
+<app-footer></app-footer>

@@ -1,0 +1,22 @@
+<body>
+  <app-user-navbar></app-user-navbar>
+<form [formGroup]="addReviewForm" (ngSubmit)="onSubmit()">
+    <h2>Give a review for this post: </h2>
+    <div class="star-rating">
+        <div class="star-rating">
+            <i class="fas fa-star" [ngStyle]="{'color': rating >= 1 ? 'gold' : 'lightgray'}" (click)="rate(1)"></i>
+            <i class="fas fa-star" [ngStyle]="{'color': rating >= 2 ? 'gold' : 'lightgray'}" (click)="rate(2)"></i>
+            <i class="fas fa-star" [ngStyle]="{'color': rating >= 3 ? 'gold' : 'lightgray'}" (click)="rate(3)"></i>
+            <i class="fas fa-star" [ngStyle]="{'color': rating >= 4 ? 'gold' : 'lightgray'}" (click)="rate(4)"></i>
+            <i class="fas fa-star" [ngStyle]="{'color': rating >= 5 ? 'gold' : 'lightgray'}" (click)="rate(5)"></i>
+          </div>          
+      </div>
+    <div>
+      <textarea formControlName="content" placeholder="Write your review"></textarea>
+    </div>
+  
+    <button type="submit" [disabled]="addReviewForm.invalid">Submit Review</button>
+  </form>
+  <app-footer></app-footer>
+  
+</body>

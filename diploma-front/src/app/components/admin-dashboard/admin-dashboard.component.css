@@ -1,0 +1,14 @@
+.admin-add{
+    float:right;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: green;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5%;
+}
+
+.admin-add a{
+    color: white;
+    text-decoration: none;
+}

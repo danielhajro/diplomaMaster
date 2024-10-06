@@ -1,0 +1,33 @@
+<!-- Display All Users -->
+<div class="card mt-4">
+    <div class="card-header">
+      <h3>Perdoruesit</h3> 
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Emri</th>
+            <th>Mbiemri</th>
+            <th>Email</th>
+            <th>Numri</th> <!-- New column for phone number -->
+            <th>Adresa</th> <!-- New column for address -->
+            <th>Shteti</th> <!-- New column for state -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of person; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.surname }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.number }}</td> <!-- Display phone number -->
+            <td>{{ person.address }}</td> <!-- Display address -->
+            <td>{{ person.state }}</td> <!-- Display state -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

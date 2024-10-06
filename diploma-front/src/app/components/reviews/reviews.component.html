@@ -1,0 +1,38 @@
+<body>
+    <app-user-navbar></app-user-navbar>
+    <div class="reviews-container">
+        <h2>My Reviews</h2>
+        
+        <!-- Display a message if there are no reviews -->
+        <div *ngIf="reviews.length === 0" class="no-reviews">
+          <p>You have no reviews yet.</p>
+        </div>
+      
+        <!-- Display list of reviews -->
+        <div *ngIf="reviews.length > 0" class="review-list">
+          <div *ngFor="let review of reviews" class="review-item">
+            <div class="review-header">
+              <p class="rating">
+                Rating: 
+                <span *ngFor="let star of [1, 2, 3, 4, 5]">
+                  <i class="fas" [ngClass]="{'fa-star': star <= review.rating, 'fa-star-o': star > review.rating}"></i>
+                </span>
+              </p>
+            </div>
+            <div class="review-content">
+              <p>{{ review.content }}</p>
+            </div>
+            <div class="review-actions">
+              <button (click)="router.navigate(['/edit-review', review.review_id])" class="btn btn-sm btn-primary">
+                Edit
+              </button>
+              <button (click)="deleteReview(review.review_id!)" class="btn btn-sm btn-danger">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <app-footer></app-footer>
+</body>

@@ -1,0 +1,61 @@
+<body>
+  <app-user-navbar></app-user-navbar>
+<div *ngIf="post" class="combined-details">
+  <!-- Post Details Section -->
+  <section class="post-details">
+    <h2>Post Details</h2>
+    <p><strong>Title:</strong> {{ post?.title }}</p>
+    <p><strong>Content:</strong> {{ post?.content }}</p>
+    <p><strong>Sell Price:</strong> {{ post?.sell_price }} €</p>
+  </section>
+
+  <!-- Car Details Section -->
+  <section class="car-details" *ngIf="post?.car_id">
+    <h2>Car Details</h2>
+    <p><strong>Make:</strong> {{ post?.car_id?.make }}</p>
+    <p><strong>Model:</strong> {{ post?.car_id?.model }}</p>
+    <p><strong>Fuel:</strong> {{ post?.car_id?.fuel }}</p>
+    <p><strong>Gear:</strong> {{ post?.car_id?.gear }}</p>
+    <p><strong>Offer Type:</strong> {{ post?.car_id?.offer_type }}</p>
+    <p><strong>Horsepower:</strong> {{ post?.car_id?.hp }} hp</p>
+    <p><strong>Year:</strong> {{ post?.car_id?.year }}</p>
+  </section>
+
+  <!-- Person Details Section -->
+  <section class="person-details" *ngIf="post?.car_id?.person_id">
+    <h2>Seller Details</h2>
+    <p><strong>Name:</strong> {{ post?.car_id?.person_id?.name }}</p>
+    <p><strong>Phone Number:</strong> {{ post?.car_id?.person_id?.number }}</p>
+    <p><strong>Email:</strong> {{ post?.car_id?.person_id?.email }}</p>
+    <p><strong>State:</strong> {{ post?.car_id?.person_id?.state }}</p>
+    <p><strong>Address:</strong> {{ post?.car_id?.person_id?.address }}</p>
+  </section>
+
+  
+</div><br> 
+<!-- Button Container for Centering -->
+<div class="button-container">
+  <button class="place-order" (click)="placeOrder(post.post_id)">
+    <i class="fa fa-shopping-cart"></i> Place Order
+  </button>
+</div>
+
+<!-- Reviews Section in a New Row -->
+<section class="reviews-section">
+  <h2>Reviews</h2>
+  <div *ngIf="reviews.length === 0" class="no-reviews">
+    <p>No reviews yet for this post.</p>
+  </div>
+  <div *ngFor="let review of reviews" class="review-item">
+    <p><strong>Rating:</strong>
+      <span *ngFor="let star of [1, 2, 3, 4, 5]">
+        <i class="fas" [ngClass]="{'fa-star': star <= review.rating, 'fa-star-o': star > review.rating}"></i>
+      </span>
+    </p>
+    <p><strong>Review:</strong> {{ review.content }}</p>
+  </div>
+</section>
+
+<app-footer></app-footer>
+
+</body>

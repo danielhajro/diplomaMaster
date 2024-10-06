@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div class="full">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <p class="title">Regjistrohu Admin</p>
+    <div class="flex">
+      <label>
+        <input formControlName="name" class="input" type="text" placeholder="Emri" />
+        <span>Emri</span>
+      </label>
+
+      <label>
+        <input formControlName="surname" class="input" type="text" placeholder="Mbiemri" />
+        <span>Mbiemri</span>
+      </label>
+    </div>
+
+    <label>
+      <input type="date" formControlName="dob" class="input" placeholder="Ditelindja" />
+      <span>Ditelindja</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="email" type="email" placeholder="Email" />
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input formControlName="password" class="input" type="password" placeholder="Password" />
+      <span>Password</span>
+    </label>
+
+    <label>
+      <input class="input" formControlName="number" type="text" placeholder="Numri" />
+      <span>Numri</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="address" class="input" placeholder="Adresa" />
+      <span>Adresa</span>
+    </label>
+
+    <label>
+      <input type="text" formControlName="state" class="input" placeholder="Shteti" />
+      <span>Shteti</span>
+    </label>
+
+    <!-- Hidden fields for default values -->
+    <label class="non-visible">
+      <input type="hidden" formControlName="role" />
+      <span>Role</span>
+    </label>
+
+    <label class="non-visible">
+      <input type="hidden" formControlName="profilePic" />
+      <span>Profile Pic</span>
+    </label>
+
+    <button class="submit" type="submit" [disabled]="registerForm.invalid">Submit</button>
+  </form>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,53 @@
+<!-- Display All Orders -->
+<div class="card mt-4">
+  <div class="card-header">
+    <h3>Porosite</h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Data Porosise</th>
+          <th>Statusi</th>
+          <th>Menyra Pageses</th>
+          <th>Detajet e Blerësit</th> <!-- Buyer Details -->
+          <th>Detajet e Shitësit</th> <!-- Seller Details -->
+          <th>Detajet e Postimit</th> <!-- Post Details -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of order; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ order.order_date | date: 'short' }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.payment_type }}</td>
+          <!-- Display Buyer Details -->
+          <td>
+            <div *ngFor="let detail of getPersonDetails(order.person_id)">
+              <strong>{{ detail.label }}:</strong> {{ detail.value }}
+            </div>
+          </td>
+          <!-- Display Seller Details -->
+          <td>
+            <div *ngIf="order.seller_id !== undefined && sellerDetails[order.seller_id]">
+              <div *ngFor="let detail of getSellerDetailsValue(sellerDetails[order.seller_id])">
+                <strong>{{ detail.label }}:</strong> {{ detail.value }}
+              </div>
+            </div>
+            <div *ngIf="order.seller_id === undefined || !sellerDetails[order.seller_id]">
+              Loading...
+            </div>
+          </td>
+
+          <td>
+            <div *ngFor="let detail of getPostDetails(order.post_id)">
+              <strong>{{ detail.label }}:</strong> {{ detail.value }}
+            </div>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

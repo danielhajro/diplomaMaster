@@ -1,0 +1,53 @@
+<body>
+  <app-user-navbar></app-user-navbar>
+<form [formGroup]="updateCarForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="mileage">Mileage</label>
+      <input formControlName="mileage" type="number" id="mileage" />
+    </div>
+  
+    <div>
+      <label for="make">Make</label>
+      <input formControlName="make" type="text" id="make" />
+    </div>
+  
+    <div>
+      <label for="model">Model</label>
+      <input formControlName="model" type="text" id="model" />
+    </div>
+  
+    <div>
+      <label for="fuel">Fuel</label>
+      <input formControlName="fuel" type="text" id="fuel" />
+    </div>
+  
+    <div>
+      <label for="gear">Gear</label>
+      <input formControlName="gear" type="text" id="gear" />
+    </div>
+  
+    <div>
+      <label for="offer_type">Offer Type</label>
+      <input formControlName="offer_type" type="text" id="offer_type" />
+    </div>
+  
+    <div>
+      <label for="price">Price</label>
+      <input formControlName="price" type="number" id="price" />
+    </div>
+  
+    <div>
+      <label for="hp">HP</label>
+      <input formControlName="hp" type="number" id="hp" />
+    </div>
+  
+    <div>
+      <label for="year">Year</label>
+      <input formControlName="year" type="number" id="year" />
+    </div>
+  
+    <button type="submit" [disabled]="updateCarForm.invalid">Update Car</button>
+  </form>
+  
+  <app-footer></app-footer>
+</body>

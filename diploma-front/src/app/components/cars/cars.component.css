@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    background-color: #0f0e17; /* Dark background for contrast */
+    font-family: 'Roboto', sans-serif;
+    color: #fffffe; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h2 {
+    font-size: 32px;
+    color: #ff8906; /* Futuristic orange */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Cars Container */
+.cars {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #232946; /* Dark blue */
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+.cars-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add Car Button */
+.add-car-btn {
+    background-color: #ff8906; /* Futuristic orange */
+    color: #fffffe; /* White */
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.add-car-btn:hover {
+    background-color: #ff5403; /* Deeper orange for hover */
+    transform: scale(1.05);
+}
+
+/* Cars Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #121629; /* Darker futuristic blue */
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #ff8906; /* Orange Header */
+    color: #fffffe; /* White text */
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #34344a; /* Subtle border for rows */
+}
+
+tbody tr:hover {
+    background-color: #ff8906; /* Highlighted row on hover */
+    color: #fffffe; /* Ensure text is readable on hover */
+}
+
+/* Buttons */
+.edit-btn, .delete-btn {
+    padding: 8px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #3ddc97; /* Futuristic green */
+    color: #121629; /* Dark background color */
+}
+
+.edit-btn:hover {
+    background-color: #2aaf76; /* Darker green */
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #e53170; /* Bright magenta-red */
+    color: #fffffe;
+}
+
+.delete-btn:hover {
+    background-color: #c0275a; /* Darker magenta-red */
+    transform: scale(1.05);
+}
+
+/* No Cars Message */
+p {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    background-color: #34344a; /* Darker contrast background */
+    color: #ff8906; /* Futuristic orange */
+    border-radius: 10px;
+}
+
+/* Hover Effects for Table Rows */
+tbody tr:nth-child(even) {
+    background-color: #232946; /* Alternate background for rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1e1e38; /* Darker alternate background */
+}
+

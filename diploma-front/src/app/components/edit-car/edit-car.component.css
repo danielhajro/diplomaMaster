@@ -1,0 +1,85 @@
+body{
+    background-color: #000102;
+    height: max-content;
+}
+form {
+    max-width: 600px; /* Limit width for better readability */
+    margin: 20px auto; /* Center the form */
+    padding: 20px; /* Padding inside the form */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  /* Individual input fields */
+  div {
+    margin-bottom: 15px; /* Space between input fields */
+  }
+  
+  /* Labels */
+  label {
+    display: block; /* Labels above inputs */
+    font-weight: 600; /* Bold labels */
+    color: #f1c40f; /* Highlighted color for labels */
+    margin-bottom: 5px; /* Space below labels */
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside input */
+    border: 1px solid #bdc3c7; /* Light border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 1em; /* Font size */
+    color: #7d6506; /* Dark text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for inputs */
+    transition: border-color 0.3s ease; /* Transition for border color */
+  }
+  
+  /* Input focus state */
+  input:focus {
+    border-color: #2196F3; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Submit button */
+  button {
+    display: block; /* Center the button */
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding inside button */
+    background-color: #2196F3; /* Blue button */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded button */
+    font-weight: 600; /* Bold text */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transitions */
+  }
+  
+  /* Button hover state */
+  button:hover {
+    background-color: #1976D2; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+  }
+  
+  /* Button disabled state */
+  button[disabled] {
+    background-color: #bdc3c7; /* Gray background for disabled */
+    cursor: not-allowed; /* Not allowed cursor */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    form {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    input {
+      font-size: 0.9em; /* Slightly smaller font size */
+    }
+  
+    button {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
+  
