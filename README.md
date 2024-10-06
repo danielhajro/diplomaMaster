@@ -66,7 +66,7 @@ mvn spring-boot:run
     ng serve;
     ````
 
-4. ## Database Schema
+ ## Database Schema
 The database consists of several tables:
 
 Person: Stores user information (name, email, etc.).
@@ -76,7 +76,7 @@ Order: Stores order details, including payment method and status.
 Review: Tracks reviews and ratings left by users for each post.
 Wishlist: Stores favorite posts added by users.
 
-5. ## Future Improvements
+ ## Future Improvements
 Performance Optimization: Implement caching and optimize query performance.
 Additional Features:
 Real-time notifications for order status updates.
